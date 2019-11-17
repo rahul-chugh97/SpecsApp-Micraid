@@ -1,0 +1,41 @@
+{%extends 'index.html'%}
+{%block content%}
+<script>
+
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode == 80){ // play/pause
+    if(document.getElementById('audio').paused){
+      document.getElementById('audio').play();
+    }
+    else {
+      document.getElementById('audio').pause();
+    }
+  }
+  else
+  if(e.keyCode == 39){ // to fast
+    var playbackRate = document.getElementById('audio').playbackRate;
+    playbackRate = playbackRate+0.1;
+    document.getElementById('audio').playbackRate = playbackRate;
+    // document.getElementById('playbackRate').innerHTML = playbackRate;
+  }
+  else
+  if(e.keyCode == 37){ // to slow
+    var playbackRate = document.getElementById('audio').playbackRate;
+    playbackRate = playbackRate-0.1;
+    document.getElementById('audio').playbackRate = playbackRate;
+    // document.getElementById('playbackRate').innerHTML = playbackRate;
+  }
+});
+</script>
+<div class="about">
+    <h3>Play Audio here</h3>
+    <p>Press P to Play/Pause</p>
+    <p>Left/Right Arrow keys to control Playback Rate<p id="playbackRate"></p></p>
+
+    <audio id="audio" controls >
+      <source src="output/output.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+{%endblock%}

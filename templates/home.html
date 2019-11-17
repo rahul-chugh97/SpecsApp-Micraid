@@ -1,0 +1,19 @@
+{%extends 'index.html'%}
+{%block content%}
+<form class="contact-form" name="contact-form" id="contact-form" action = "play" method = "POST" enctype = "multipart/form-data">
+	<div class="row">
+		<div class="col-md-12">
+		<h3>Upload File here</h3>
+    <p>Select a PDF or TIFF file</p>
+	</div>
+		<div class="col-md-6">
+			<input type="file" name="file" placeholder=".pdf or .tiff">
+		</div>
+		<div class="col-md-6">
+		</div>
+		<div class="col-md-12" style="margin-top:25px">
+		<button type="submit" id="submit-button" class="site-btn">Upload</button>
+		</div>
+	</div>
+</form>
+{%endblock%}
